@@ -1,38 +1,112 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+nav {
+  background-color: rgb(103, 102, 107);
+  text-align: center;
+  padding: 20px;
+}
+
+.links {
+  text-decoration: none;
+  margin: 8px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Form styling */
+.form-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.formGroup {
+  margin: 8px;
+}
+
+.inputs {
+  padding: 8px;
+  background-color: rgb(231, 221, 221);
+  border: none;
+}
+
+.btnAdd {
+  background-color: rgb(84, 84, 201);
+  padding: 14px 24px 14px 24px;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* Blog view */
+
+.blog-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgb(177, 159, 159) 10px 5px 10px;
+  margin-top: 12px;
+}
+
+.blogTxtTitle {
+  margin-top: 2px;
+  font-size: 22px;
+  text-align: center;
+}
+.blogTxtBlog {
+  margin-top: 2px;
+  font-size: 14px;
+  color: rgb(139, 134, 134);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.blogTxtAuthor {
+  margin-top: 2px;
+  font-size: 14px;
+  color: rgb(58, 55, 55);
+  font-family: italic;
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.blog-buttons {
+  margin-top: 8px;
+  padding: 5px;
+  text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.btnBlogUpdate {
+  padding: 8px 14px 8px 14px;
+  margin: 3px;
+  background-color: rgb(94, 199, 231);
+  border: none;
+  border-radius: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.btnBlogDelete {
+  padding: 8px 14px 8px 14px;
+  margin: 3px;
+  background-color: rgb(240, 80, 40);
+  color: #fff;
+  border: none;
+  font-size: 14px;
+  border-radius: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.updateLink {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
 }
