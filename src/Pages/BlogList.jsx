@@ -5,6 +5,8 @@ import { Link, useNavigate } from "react-router-dom";
 
 export default function BlogList() {
   const [blogs, setBlogs] = useState([]);
+  const [msg, setMsg] = useState("");
+  const navigate = useNavigate();
   useEffect(() => {
     const fxnshow = async () => {
       const getCollection = collection(db, "firebasedemo");
@@ -12,13 +14,15 @@ export default function BlogList() {
       setBlogs(blogList.docs.map((blog) => ({ ...blog.data(), id: blog.id })));
     };
     fxnshow();
-  }, []);
+  }, [msg]);
 
   const deleteBlog = async (id) => {
     console.log("==id", id);
     await deleteDoc(doc(db, "firebasedemo", id))
       .then(() => {
         console.log("===deleted successfully");
+        setMsg("Deleted Successfully!");
+        navigate("/view");
       })
       .catch((error) => {
         console.log("===error===", error);
@@ -26,6 +30,11 @@ export default function BlogList() {
   };
   return (
     <div>
+      {msg && (
+        <div>
+          <h3>{msg}</h3>
+        </div>
+      )}
       {blogs.map((blog) => {
         return (
           <div className="blog-container" key={blog.id}>

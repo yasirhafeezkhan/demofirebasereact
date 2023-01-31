@@ -12,6 +12,7 @@ nav {
   background-color: rgb(103, 102, 107);
   text-align: center;
   padding: 20px;
+  margin-bottom: 20px;
 }
 
 .links {
@@ -23,32 +24,44 @@ nav {
 }
 
 /* Form styling */
-.form-container {
+.createBlog-container {
   display: flex;
-  width: 100%;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  margin-top: 10px;
+  height: 500px;
 }
 
+.createBlog-container--form {
+  background-image: linear-gradient(
+    to right,
+    rgba(206, 206, 206, 0.3),
+    rgba(190, 190, 190, 0.8)
+  );
+  padding: 40px;
+  box-shadow: 3px 3px 3px 3px #948d8d;
+  border-radius: 10px;
+}
 .formGroup {
-  margin: 8px;
+  margin: 8px 0px 20px 0px;
 }
 
 .inputs {
-  padding: 8px;
-  background-color: rgb(231, 221, 221);
+  width: 350px;
+  padding: 15px;
   border: none;
+  border-radius: 10px;
+  background-color: #c2bdbd;
 }
 
 .btnAdd {
-  background-color: rgb(84, 84, 201);
-  padding: 14px 24px 14px 24px;
+  background-color: rgb(116, 116, 216);
   border: none;
-  border-radius: 10px;
+  border-radius: 12px 5px 12px 5px;
+  padding: 12px 18px 12px 18px;
   color: #fff;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
-  text-transform: uppercase;
 }
 
 /* Blog view */
@@ -109,4 +122,78 @@ nav {
   text-decoration: none;
   color: #fff;
   font-size: 14px;
+}
+
+/* START:Login */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+}
+.login-box {
+  background-image: linear-gradient(
+    to right,
+    rgba(206, 206, 206, 0.3),
+    rgba(190, 190, 190, 0.8)
+  );
+  padding: 50px;
+  box-shadow: 3px 3px 3px 3px #948d8d;
+  border-radius: 10px;
+}
+
+.Login-box-text {
+  text-align: center;
+  color: rgb(71, 70, 70);
+}
+
+.login-formGroup {
+  margin: 8px 0px 20px 0px;
+}
+
+.login-formGroup_label {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 5px;
+  color: rgb(71, 70, 70);
+}
+.login-inputs {
+  width: 350px;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: #c2bdbd;
+}
+
+.btnLogin {
+  background-color: rgb(116, 116, 216);
+  border: none;
+  border-radius: 12px 5px 12px 5px;
+  padding: 12px 18px 12px 18px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.btnLogin:hover {
+  background-color: rgb(66, 66, 206);
+}
+
+.btnSigin-div {
+  float: left;
+}
+.signUp-div {
+  float: right;
+}
+
+.signUp-text {
+  text-decoration: none;
+  color: rgb(71, 70, 70);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.signUp-text:hover {
+  color: rgb(245, 59, 59);
 }

@@ -1,5 +1,6 @@
 import { addDoc, collection } from "firebase/firestore";
 import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { db } from "../firebase-config";
 
 export default function CreateBlog() {
@@ -7,6 +8,7 @@ export default function CreateBlog() {
   const blogTxt = useRef();
   const authorTxt = useRef();
   const postCollection = collection(db, "firebasedemo");
+  const navigate = useNavigate();
 
   const submitBlog = async (e) => {
     e.preventDefault();
@@ -16,6 +18,7 @@ export default function CreateBlog() {
     await addDoc(postCollection, { title, blog, author })
       .then(() => {
         console.log("====Added successfully===");
+        navigate("/view");
       })
       .catch((error) => {
         console.log("===error===", error);
@@ -23,8 +26,9 @@ export default function CreateBlog() {
   };
 
   return (
-    <div className="form-container">
-      <form onSubmit={submitBlog}>
+    <div className="createBlog-container">
+      <form className="createBlog-container--form" onSubmit={submitBlog}>
+        <h2 className="Login-box-text">Add Blog</h2>
         <div className="formGroup">
           <div>
             <label>Title</label>
@@ -60,7 +64,7 @@ export default function CreateBlog() {
           </div>
         </div>
         <div className="formGroup">
-          <input type="submit" className="btnAdd" value="add" />
+          <input type="submit" className="btnAdd" value="Add" />
         </div>
       </form>
     </div>
